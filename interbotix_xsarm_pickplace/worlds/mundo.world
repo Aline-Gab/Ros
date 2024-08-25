@@ -1,0 +1,1417 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='table1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.915961 -0.015023 0 0 -0 0</pose>
+    </model>
+    <model name='table2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.067001 0.922117 0 0 -0 0</pose>
+    </model>
+    <model name='object'>
+      <link name='link_0'>
+        <inertial>
+          <mass>0.005</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <lighting>1</lighting>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.01 0.01 0.01 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.1</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>0.61611 -0.568096 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>171 990000000</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>1722743666 64723820</wall_time>
+      <iterations>0</iterations>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='object'>
+        <pose>0.4 -0.2 0.15 1.0 0.000158 -0.000414</pose>
+        <scale>1 1 1</scale>
+        <link name='link_0'>
+          <pose>0.4 -0.2 0.15 -0.000186 0.000158 -0.000414</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='table1'>
+        <pose>0.4 -0.2 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.4 -0.2 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='table2'>
+        <pose>0.4 0.2 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.4 0.2 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wx250s'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='wx250s/base_link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/ee_arm_link'>
+          <pose>0.40775 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/ee_gripper_link'>
+          <pose>0.458325 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/fingers_link'>
+          <pose>0.43075 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/gripper_bar_link'>
+          <pose>0.40775 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/gripper_link'>
+          <pose>0.36475 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/gripper_prop_link'>
+          <pose>0.41325 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/left_finger_link'>
+          <pose>0.43075 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/lower_forearm_link'>
+          <pose>0.22475 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/right_finger_link'>
+          <pose>0.43075 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/shoulder_link'>
+          <pose>0 0 0.072 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/upper_arm_link'>
+          <pose>0 0 0.11065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/upper_forearm_link'>
+          <pose>0.04975 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='wx250s/wrist_link'>
+          <pose>0.29975 0 0.36065 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>2.03659 0.044789 0.240523 0 -0 3.14159</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='wx250s'>
+      <joint name='fixed' type='fixed'>
+        <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
+        <parent>world</parent>
+        <child>wx250s/base_link</child>
+      </joint>
+      <link name='wx250s/base_link'>
+        <pose relative_to='fixed'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.038045 0.000614 0.019335 0 -0 1.5708</pose>
+          <mass>0.538736</mass>
+          <inertia>
+            <ixx>0.002115</ixx>
+            <ixy>-1.635e-05</ixy>
+            <ixz>6.998e-07</ixz>
+            <iyy>0.0006921</iyy>
+            <iyz>4.642e-05</iyz>
+            <izz>0.002524</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/base_link_collision'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_1_base.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/base_link_visual'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_1_base.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='waist' type='revolute'>
+        <pose relative_to='wx250s/base_link'>0 0 0.072 0 -0 0</pose>
+        <parent>wx250s/base_link</parent>
+        <child>wx250s/shoulder_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-3.14158</lower>
+            <upper>3.14158</upper>
+            <effort>10</effort>
+            <velocity>3.14159</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/shoulder_link'>
+        <pose relative_to='waist'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>2.2e-05 4.1e-05 0.006629 0 -0 1.5708</pose>
+          <mass>0.480879</mass>
+          <inertia>
+            <ixx>0.000379</ixx>
+            <ixy>2.2e-09</ixy>
+            <ixz>-3.561e-07</ixz>
+            <iyy>0.0005557</iyy>
+            <iyz>1.2245e-06</iyz>
+            <izz>0.0005889</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/shoulder_link_collision'>
+          <pose>0 0 -0.003 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_2_shoulder.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/shoulder_link_visual'>
+          <pose>0 0 -0.003 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_2_shoulder.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='shoulder' type='revolute'>
+        <pose relative_to='wx250s/shoulder_link'>0 0 0.03865 0 -0 0</pose>
+        <parent>wx250s/shoulder_link</parent>
+        <child>wx250s/upper_arm_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1.88496</lower>
+            <upper>1.98968</upper>
+            <effort>20</effort>
+            <velocity>3.14159</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/upper_arm_link'>
+        <pose relative_to='shoulder'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.017161 0 0.191323 0 -0 1.5708</pose>
+          <mass>0.430811</mass>
+          <inertia>
+            <ixx>0.003463</ixx>
+            <ixy>-1e-10</ixy>
+            <ixz>-2e-10</ixz>
+            <iyy>0.003587</iyy>
+            <iyz>0.0004272</iyz>
+            <izz>0.0004566</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/upper_arm_link_collision'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_3_upper_arm.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/upper_arm_link_visual'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_3_upper_arm.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='elbow' type='revolute'>
+        <pose relative_to='wx250s/upper_arm_link'>0.04975 0 0.25 0 -0 0</pose>
+        <parent>wx250s/upper_arm_link</parent>
+        <child>wx250s/upper_forearm_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-2.14675</lower>
+            <upper>1.6057</upper>
+            <effort>15</effort>
+            <velocity>3.14159</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/upper_forearm_link'>
+        <pose relative_to='elbow'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.107963 0.000116 0 0 -0 0</pose>
+          <mass>0.234589</mass>
+          <inertia>
+            <ixx>3.971e-05</ixx>
+            <ixy>2.3528e-06</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0008878</iyy>
+            <iyz>0</iyz>
+            <izz>0.000888</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/upper_forearm_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_4_upper_forearm.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/upper_forearm_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_4_upper_forearm.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='forearm_roll' type='revolute'>
+        <pose relative_to='wx250s/upper_forearm_link'>0.175 0 0 0 -0 0</pose>
+        <parent>wx250s/upper_forearm_link</parent>
+        <child>wx250s/lower_forearm_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-3.14158</lower>
+            <upper>3.14158</upper>
+            <effort>2</effort>
+            <velocity>3.14159</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/lower_forearm_link'>
+        <pose relative_to='forearm_roll'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.03744 0.005223 0 3.14159 -0 0</pose>
+          <mass>0.220991</mass>
+          <inertia>
+            <ixx>6.369e-05</ixx>
+            <ixy>-2.292e-05</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0001677</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001834</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/lower_forearm_link_collision'>
+          <pose>0 0 0 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_5_lower_forearm.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/lower_forearm_link_visual'>
+          <pose>0 0 0 3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_5_lower_forearm.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='wrist_angle' type='revolute'>
+        <pose relative_to='wx250s/lower_forearm_link'>0.075 0 0 0 -0 0</pose>
+        <parent>wx250s/lower_forearm_link</parent>
+        <child>wx250s/wrist_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1.74533</lower>
+            <upper>2.14675</upper>
+            <effort>5</effort>
+            <velocity>3.14159</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/wrist_link'>
+        <pose relative_to='wrist_angle'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.04236 -1.1e-05 0.010577 0 -0 1.5708</pose>
+          <mass>0.084957</mass>
+          <inertia>
+            <ixx>3.082e-05</ixx>
+            <ixy>1.91e-08</ixy>
+            <ixz>2.3e-09</ixz>
+            <iyy>2.822e-05</iyy>
+            <iyz>2.5481e-06</iyz>
+            <izz>3.152e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/wrist_link_collision'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_6_wrist.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/wrist_link_visual'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_6_wrist.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='wrist_rotate' type='revolute'>
+        <pose relative_to='wx250s/wrist_link'>0.065 0 0 0 -0 0</pose>
+        <parent>wx250s/wrist_link</parent>
+        <child>wx250s/gripper_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-3.14158</lower>
+            <upper>3.14158</upper>
+            <effort>1</effort>
+            <velocity>3.14159</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/gripper_link'>
+        <pose relative_to='wrist_rotate'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.021631 0 0.01141 0 -0 1.5708</pose>
+          <mass>0.072885</mass>
+          <inertia>
+            <ixx>2.537e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.836e-05</iyy>
+            <iyz>4.34e-07</iyz>
+            <izz>1.674e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/gripper_link_collision'>
+          <pose>-0.02 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_7_gripper.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/gripper_link_visual'>
+          <pose>-0.02 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_7_gripper.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='ee_arm' type='revolute'>
+        <pose relative_to='wx250s/gripper_link'>0.043 0 0 0 -0 0</pose>
+        <parent>wx250s/gripper_link</parent>
+        <child>wx250s/ee_arm_link</child>
+        <axis>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <xyz>0 0 1</xyz>
+        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='wx250s/ee_arm_link'>
+        <pose relative_to='ee_arm'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='gripper' type='revolute'>
+        <pose relative_to='wx250s/ee_arm_link'>0.0055 0 0 0 -0 0</pose>
+        <parent>wx250s/ee_arm_link</parent>
+        <child>wx250s/gripper_prop_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <effort>1</effort>
+            <velocity>3.14159</velocity>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/gripper_prop_link'>
+        <pose relative_to='gripper'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.000846 -2e-06 4.2e-05 0 -0 1.5708</pose>
+          <mass>0.00434</mass>
+          <inertia>
+            <ixx>5.923e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>3.195e-07</ixz>
+            <iyy>1.1156e-06</iyy>
+            <iyz>-4e-10</iyz>
+            <izz>5.743e-07</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/gripper_prop_link_collision'>
+          <pose>-0.0685 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_8_gripper_prop.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/gripper_prop_link_visual'>
+          <pose>-0.0685 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_8_gripper_prop.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='gripper_bar' type='revolute'>
+        <pose relative_to='wx250s/ee_arm_link'>0 0 0 0 -0 0</pose>
+        <parent>wx250s/ee_arm_link</parent>
+        <child>wx250s/gripper_bar_link</child>
+        <axis>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <xyz>0 0 1</xyz>
+        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='wx250s/gripper_bar_link'>
+        <pose relative_to='gripper_bar'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.009687 1e-06 0.004962 0 -0 1.5708</pose>
+          <mass>0.034199</mass>
+          <inertia>
+            <ixx>7.4125e-06</ixx>
+            <ixy>-8e-10</ixy>
+            <ixz>-6e-10</ixz>
+            <iyy>2.843e-05</iyy>
+            <iyz>-1.3889e-06</iyz>
+            <izz>2.86e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/gripper_bar_link_collision'>
+          <pose>-0.063 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_9_gripper_bar.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/gripper_bar_link_visual'>
+          <pose>-0.063 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_9_gripper_bar.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='ee_bar' type='revolute'>
+        <pose relative_to='wx250s/gripper_bar_link'>0.023 0 0 0 -0 0</pose>
+        <parent>wx250s/gripper_bar_link</parent>
+        <child>wx250s/fingers_link</child>
+        <axis>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <xyz>0 0 1</xyz>
+        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='wx250s/fingers_link'>
+        <pose relative_to='ee_bar'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='ee_gripper' type='revolute'>
+        <pose relative_to='wx250s/fingers_link'>0.027575 0 0 0 -0 0</pose>
+        <parent>wx250s/fingers_link</parent>
+        <child>wx250s/ee_gripper_link</child>
+        <axis>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <xyz>0 0 1</xyz>
+        </axis>
+        <physics>
+          <ode>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='wx250s/ee_gripper_link'>
+        <pose relative_to='ee_gripper'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.001</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='left_finger' type='prismatic'>
+        <pose relative_to='wx250s/fingers_link'>0 0 0 0 -0 0</pose>
+        <parent>wx250s/fingers_link</parent>
+        <child>wx250s/left_finger_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>0.015</lower>
+            <upper>0.037</upper>
+            <effort>5</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/left_finger_link'>
+        <pose relative_to='left_finger'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.013816 0 0 0 0 -1.5708</pose>
+          <mass>0.016246</mass>
+          <inertia>
+            <ixx>4.731e-06</ixx>
+            <ixy>-4.56e-07</ixy>
+            <ixz>0</ixz>
+            <iyy>1.5506e-06</iyy>
+            <iyz>0</iyz>
+            <izz>3.7467e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/left_finger_link_collision'>
+          <pose>0 0.005 0 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_10_gripper_finger.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/left_finger_link_visual'>
+          <pose>0 0.005 0 0 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_10_gripper_finger.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='right_finger' type='prismatic'>
+        <pose relative_to='wx250s/fingers_link'>0 0 0 0 -0 0</pose>
+        <parent>wx250s/fingers_link</parent>
+        <child>wx250s/right_finger_link</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-0.037</lower>
+            <upper>-0.015</upper>
+            <effort>5</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0.1</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='wx250s/right_finger_link'>
+        <pose relative_to='right_finger'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.013816 0 0 3.14159 -0 -1.5708</pose>
+          <mass>0.016246</mass>
+          <inertia>
+            <ixx>4.731e-06</ixx>
+            <ixy>4.56e-07</ixy>
+            <ixz>0</ixz>
+            <iyy>1.5506e-06</iyy>
+            <iyz>0</iyz>
+            <izz>3.7467e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='wx250s/right_finger_link_collision'>
+          <pose>0 -0.005 0 3.14159 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_10_gripper_finger.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='wx250s/right_finger_link_visual'>
+          <pose>0 -0.005 0 3.14159 -0 3.14159</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>/home/aline/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes/wx250s_10_gripper_finger.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Custom/Interbotix</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0.1</linear>
+          <angular>0.1</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>1</legacyModeNS>
+        <robotNamespace>/wx250s/</robotNamespace>
+      </plugin>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>
