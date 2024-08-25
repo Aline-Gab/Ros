@@ -30,7 +30,7 @@ def main():
     eef_link = arm_group.get_end_effector_link()
     touch_links = robot.get_link_names(group="interbotix_gripper")
 
-    # Criar uma cena
+    # Criando uma cena
     rospy.sleep(1)  
     scene_objects = create_scene(scene)
     rospy.loginfo('Cena Criada. Os objetos sao: ' + str(scene_objects))
@@ -38,7 +38,7 @@ def main():
     rospy.sleep(1)
 
 
-    #coloca o braço na posição inicial
+    # coloca o braço na posição inicial
     arm_group.set_named_target("Upright")
     plan = arm_group.go(wait=True)
     rospy.sleep(1)
@@ -50,7 +50,7 @@ def main():
         sys.exit()
 
 
-    #abrir a garra
+    # abre a garra
     hand_group.set_named_target("Open")
     plan = hand_group.go(wait=True)
     rospy.sleep(1)
@@ -70,7 +70,7 @@ def main():
     object_initial_pose.position.y = -0.2
     object_initial_pose.position.z = 0.18
     
-    #ir para perto do objeto
+    #i o braço vai para perto do objeto
     arm_group.set_pose_target(object_initial_pose)
     plan = arm_group.go(wait=True)
    
@@ -89,7 +89,7 @@ def main():
     wait_for_scene_update(scene, scene_objects, expected_attached_objects=['object'])
 
     
-    # fechar a garra
+    # fecha a garra
     hand_group.set_named_target("Closed")
     plan = hand_group.go(wait=True)
     rospy.sleep(1)
@@ -120,7 +120,7 @@ def main():
         
     rospy.sleep(1)
    
-    # abrir a garra para soltar o objeto
+    # abre a garra para soltar o objeto
     hand_group.set_named_target("Open")
     plan = hand_group.go()
     if plan:
@@ -137,7 +137,8 @@ def main():
    
 
     rospy.sleep(1)
-    # colocar o braço na posição inicial
+    
+    # coloca o braço na posição inicial
     arm_group.set_named_target("Sleep")
     plan = arm_group.go(wait=True)
     arm_group.stop()
@@ -217,10 +218,10 @@ def wait_for_scene_update(scene, expected_scene_objects=None,
     start = rospy.get_time()
     seconds = rospy.get_time()
     while (seconds - start < timeout) and not rospy.is_shutdown():
-        # Are all objects expected to be on the scene there?
+        
         scene_objects_ok = \
             set(expected_scene_objects) == set(scene.get_known_object_names())
-        # Are all objects expected to be attached attached?
+       
         attached_objects_ok = \
             set(expected_attached_objects) == set(scene.get_attached_objects())
 
@@ -230,7 +231,7 @@ def wait_for_scene_update(scene, expected_scene_objects=None,
             rospy.sleep(0.1)
             seconds = rospy.get_time()
 
-    # If the while loop exited without returning then we timedout
+  
     raise TimeoutError('Scene was not updated before timeout.')
 
 if __name__ == "__main__":
