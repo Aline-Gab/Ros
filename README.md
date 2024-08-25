@@ -2,7 +2,7 @@
 
 Este repositório contém um tutorial para simulação de um simples pick and place utilizando o braço robótico WidowX-250s com o ROS (Robot Operating System). O objetivo deste projeto é permitir que o braço robótico mova um objeto de uma mesa para outra dentro de um ambiente simulado.
 
-![Demonstração do Pick and Place](images/pick.gif)
+![Demonstração do Pick and Place](interbotix_xsarm_pickplace/images/pick.gif)
 
 ## Índice
 - [Pré-requisitos](#pré-requisitos)
