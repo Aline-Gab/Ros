@@ -5,12 +5,8 @@ Este repositório contém um tutorial para simulação de um simples pick and pl
 ## Índice
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
-- [Configuração](#configuração)
 - [Execução](#execução)
-- [Arquitetura do Código](#arquitetura-do-código)
-- [Possíveis Problemas e Soluções](#possíveis-problemas-e-soluções)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
+
 
 ## Pré-requisitos
 
