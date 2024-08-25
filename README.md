@@ -4,6 +4,8 @@ Este repositório contém um tutorial para simulação de um simples pick and pl
 
 ![Demonstração do Pick and Place](interbotix_xsarm_pickplace/images/pick.gif)
 
+![Demonstração do Pick and Place](interbotix_xsarm_pickplace/images/rviz.gif)
+
 ## Índice
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
