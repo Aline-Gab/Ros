@@ -44,14 +44,13 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
 Para executar o código de pick and place, siga os passos abaixo:
 
 1. Inicie o ambiente de simulação:
+   Abra um terminal e execute o comando a seguir para iniciar o ambiente de simulação:
    ```bash
    roslaunch interbotix_xsarm_pickplace xsarm_moveit.launch 
 
 2. Execute o launch de pick and place:
+   Abra um novo terminar e execute:
    ```bash
    roslaunch interbotix_xsarm_pickplace pickplace.launch
-   
-   
-   
-   
+     
 
