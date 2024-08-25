@@ -1,8 +1,0 @@
-<launch>
-
-  <group ns="wx250s">
-    <node pkg="interbotix_xsarm_pickplace" name="pick_place" type="pick_place.py"/>
-  </group>
-
-  <node />
-</launch>
