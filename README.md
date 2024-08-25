@@ -27,22 +27,35 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
    Primeiro, faça o download dos pacotes fornecidos pela fabricante do braço robótico WidowX250s:
    ```bash
    cd ~/catkin_ws/src
-   https://github.com/Interbotix/interbotix_ros_manipulators.git
+   git clone https://github.com/Interbotix/interbotix_ros_manipulators.git
    cd ~/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/
    rm CATKIN_IGNORE 
    cd ~/catkin_ws
-   
    catkin_make
-   
    source devel/setup.bash 
    
-3. Clone o Repositório do Código Pick and Place para o seu Workspace ROS:
+2. Clone o Repositório do Código Pick and Place para o seu Workspace ROS:
 
-Agora, faça o download deste repositório, que contém o código de pick and place:
-
-   https://github.com/Aline-Gab/pick-and-place.git
+   Agora, faça o download deste repositório, que contém o código de pick and place:
+   ```bash
+   cd ~/catkin_ws/src
+   git clone https://github.com/Aline-Gab/pick-and-place.git
    cd ~/catkin_ws
    catkin_make
    source devel/setup.bash
+
+## Execução
+Para executar o código de pick and place, siga os passos abaixo:
+
+1. Inicie o ambiente de simulação:
+   ```bash
+   roslaunch interbotix_xsarm_pickplace xsarm_moveit.launch 
+
+2. Execute o launch de pick and place:
+   ```bash
+   roslaunch interbotix_xsarm_pickplace pickplace.launch
+   
+   
+   
    
 
