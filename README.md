@@ -57,6 +57,7 @@ Para executar o código de pick and place, siga os passos abaixo:
 2. Execute o launch de pick and place:
    Abra um novo terminar e execute:
    ```bash
-   roslaunch interbotix_xsarm_pickplace pickplace.launch
+   roslaunch interbotix_xsarm_pickplace pick_place.launch 
+
      
 
