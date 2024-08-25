@@ -1,6 +1,6 @@
 # Pick and Place utilizando o Braço Robótico WidowX-250s
 
-Este repositório contém um tutorial para simulação de um simples pick and place utilizando o braço robótico WidowX-250s com o ROS (Robot Operating System). O objetivo deste projeto é permitir que o robô mova um objeto de uma mesa para outra dentro de um ambiente simulado.
+Este repositório contém um tutorial para simulação de um simples pick and place utilizando o braço robótico WidowX-250s com o ROS (Robot Operating System). O objetivo deste projeto é permitir que o braço robótico mova um objeto de uma mesa para outra dentro de um ambiente simulado.
 
 ## Índice
 - [Pré-requisitos](#pré-requisitos)
@@ -25,15 +25,11 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
 1. Clone o repositório do braço robotico para o seu workspace ROS:
 
    Primeiro, faça o download dos pacotes fornecidos pela fabricante do braço robótico WidowX250s:
-
+   ```bash
    cd ~/catkin_ws/src
-   
    https://github.com/Interbotix/interbotix_ros_manipulators.git
-   
    cd ~/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/
-   
    rm CATKIN_IGNORE 
-
    cd ~/catkin_ws
    
    catkin_make
