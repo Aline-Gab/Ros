@@ -57,12 +57,14 @@ Para executar o código de pick and place, siga os passos abaixo:
    ```bash
    roslaunch interbotix_xsarm_pickplace xsarm_moveit.launch 
 
+
    Este comando inicializa o ambiente de simulação no Gazebo e Rviz juntamente com o MoveIt, que é utilizado para planejar e executar os movimentos do robô.
    
 2. Execute o launch de pick and place:
    Abra um novo terminal e execute:
    ```bash
    roslaunch interbotix_xsarm_pickplace pick_place.launch 
+   
    
    Este comando inicia o script de pick and place que fará o robô realizar as ações de pegar e mover o objeto de uma mesa para outra.
 
