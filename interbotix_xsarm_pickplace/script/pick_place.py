@@ -43,7 +43,7 @@ def main():
     plan = arm_group.go(wait=True)
     rospy.sleep(1)
     if plan:
-        rospy.loginfo("BRAÇO NA POSIÇÃO INICIAL")
+        rospy.loginfo("O BRAÇO NA POSIÇÃO INICIAL")
     else:
         rospy.loginfo("ERRO AO IR PARA A POSIÇÃO INICIAL")
         moveit_commander.roscpp_shutdown()
@@ -111,7 +111,7 @@ def main():
     arm_group.set_pose_target(object_target_pose)
     plan = arm_group.go(wait=True)
     if plan:
-        rospy.loginfo("MOVEU O OBJETO")
+        rospy.loginfo("O BRAÇO MOVEU O OBJETO")
     else:
         rospy.loginfo("ERRO AO MOVER O OBJETO")
         moveit_commander.roscpp_shutdown()
@@ -124,7 +124,7 @@ def main():
     hand_group.set_named_target("Open")
     plan = hand_group.go()
     if plan:
-        rospy.loginfo("SOLTOU O OBJETO")
+        rospy.loginfo("O BRAÇO SOLTOU O OBJETO")
     else:
         rospy.loginfo("ERRO AO SOLTAR O OBJETO")
         moveit_commander.roscpp_shutdown()
@@ -143,7 +143,7 @@ def main():
     arm_group.stop()
     arm_group.clear_pose_targets()
     if plan:
-        rospy.loginfo("BRAÇO RETORNOU PARA A POSIÇAO INICIAL")
+        rospy.loginfo("O BRAÇO RETORNOU PARA A POSIÇAO INICIAL")
     else:
         rospy.loginfo("ERRO AO RETORNAR PARA A POSIÇAO INICIAL")
 
