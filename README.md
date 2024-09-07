@@ -22,7 +22,7 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
 - Python 3
 - RViz
 - Gazebo
-- [MoveI](https://moveit.ai/install/)
+- [MoveIt](https://moveit.ai/install/)
 
 ## Instalação
 
