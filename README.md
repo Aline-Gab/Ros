@@ -32,7 +32,7 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
    ```bash
    cd ~/catkin_ws/src
    git clone https://github.com/Interbotix/interbotix_ros_manipulators.git
-   cd ~/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/
+   cd ~/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms
    rm CATKIN_IGNORE 
    cd ~/catkin_ws
    catkin_make
@@ -43,9 +43,9 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
 
    Agora, faça o download deste repositório, que contém o código de pick and place:
    ```bash
-   cd ~/catkin_ws/src
-   git clone https://github.com/agloiola/pick-and-place.git
    cd ~/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms
+   git clone https://github.com/agloiola/pick-and-place.git
+   cd ~/catkin_ws
    catkin_make
    source devel/setup.bash
 
