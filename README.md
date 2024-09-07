@@ -44,8 +44,8 @@ Antes de começar, certifique-se de que você tenha o seguinte instalado e confi
    Agora, faça o download deste repositório, que contém o código de pick and place:
    ```bash
    cd ~/catkin_ws/src
-   git clone https://github.com/Aline-Gab/pick-and-place.git
-   cd ~/catkin_ws
+   git clone https://github.com/agloiola/pick-and-place.git
+   cd ~/catkin_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms
    catkin_make
    source devel/setup.bash
 
