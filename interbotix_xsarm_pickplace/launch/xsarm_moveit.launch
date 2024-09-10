@@ -3,6 +3,7 @@
   <include file="$(find interbotix_xsarm_moveit)/launch/xsarm_moveit.launch">
     <arg name="robot_model" value="wx250s"/>
     <arg name="use_gazebo" value="true"/>
+    <arg name="dof" value="6"/>
     <arg name="world_name" value="$(find interbotix_xsarm_pickplace)/worlds/mundo.world"/>
   </include>
 
